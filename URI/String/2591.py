@@ -1,0 +1,26 @@
+a=int(input())
+j=1
+i=0
+while(i<a):
+	p=0
+	p1=0
+	t=0
+	c=str(input())
+	d1=c.find('h')
+	l1=d1+1
+	while(c[l1]=='a'):
+		l1=l1+1
+		p1=p1+1
+	d=c.find("k")
+	l=d+1
+	while(c[l]=='a'):
+		l=l+1
+		p=p+1
+	palavra='k'
+	p=p*p1
+	while(t<p):
+		palavra=palavra+'a'
+		t=t+1
+	print(palavra)
+	i=i+1
+	j=j+1

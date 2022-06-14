@@ -1,0 +1,18 @@
+using System;
+
+    class URI
+{
+    static void Main()
+    {
+        int a;
+        string A;
+        string B;
+        int b;
+        A = Console.ReadLine();
+        B = Console.ReadLine();
+        a = Convert.ToInt32(A);
+        b = Convert.ToInt32(B);
+        Console.WriteLine($"X = { a + b}");
+    }
+}
+
