@@ -8,18 +8,18 @@ int main(){
         rest = a-b;
         
         if(26*b<rest){
-            cout<<"case "<<i<<": impossible"<<endl;
+            cout<<"Case "<<i<<": impossible"<<endl;
         }else{
             if(rest%b == 0){
                 if(b>=a)
-                    cout<<"case "<<i<<": "<<0<<endl;
+                    cout<<"Case "<<i<<": "<<0<<endl;
                 else
-                    cout<<"case "<<i<<": "<<rest/b<<endl;
+                    cout<<"Case "<<i<<": "<<rest/b<<endl;
             }else{
                 if(b>=a)
-                    cout<<"case "<<i<<": "<<0<<endl;
+                    cout<<"Case "<<i<<": "<<0<<endl;
                 else
-                    cout<<"case "<<i<<": "<<(rest/b)+1<<endl;
+                    cout<<"Case "<<i<<": "<<(rest/b)+1<<endl;
             }
         }    
         i++;
