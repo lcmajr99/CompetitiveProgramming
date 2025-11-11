@@ -8,9 +8,9 @@ class Solution {
 
    private:
     void reverseHelper(vector<char>& s, int left, int right) {
-        if (left >= right) return;  
-        swap(s[left], s[right]);                // In-place swap
-        reverseHelper(s, left + 1, right - 1);  
+        if (left >= right) return;
+        swap(s[left], s[right]);  // In-place swap
+        reverseHelper(s, left + 1, right - 1);
     }
 };
 
