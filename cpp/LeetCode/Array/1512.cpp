@@ -2,25 +2,34 @@
 
 using namespace std;
 
+class Solution {
+   public:
+    int numIdenticalPairs(vector<int>& nums) {
+        int cont = 0;
+        for (int i = 0; i < nums.size() - 1; i++) {
+            for (int j = i + 1; j < nums.size(); j++) {
+                if (nums[i] == nums[j] && i < j) {
+                    cont++;
+                }
+            }
+        }
+        return cont;
+    }
+};
+
 int main() {
+    // test
+
     int n;
     cin >> n;
 
-    map<int, int> m;
-    int vet[n];
+    vector<int> vet;
+
+    int num;
     for (int i = 0; i < n; i++) {
-        cin >> vet[i];
-        if (m.find(vet[i]) != m.end())
-            m[vet[i]] += 1;
-        else
-            m.insert(pair<int, int>(i, 0));
+        cin >> num;
+        vet.push_back(num);
     }
-    1   1   1   1   1
-    int cont = 0;
-    for (auto j : m) {
-        if (j.second > 0) {
-            cont += j.second;
-        }
-    }
-    cout << cont;
+    Solution aux = Solution();
+    cout << aux.numIdenticalPairs(vet) << endl;
 }
