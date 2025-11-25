@@ -1,32 +1,20 @@
-#include <bits/stdc++.h>
+class Solution {
+   public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int, int> freq;
 
-using namespace std;
+        for (int x : nums) {
+            freq[x]++;
+        }
 
-int main() {
-    int a, num, k;
-    cin >> a;
-    map<int, int> m;
-    vector<int> vec;
+        vector<pair<int, int>> v(freq.begin(), freq.end());
+        sort(v.begin(), v.end(),
+             [](auto& a, auto& b) { return a.second > b.second; });
 
-    for (int i = 0; i < a; i++) {
-        cin >> num;
-        vec.push_back(num);
+        vector<int> res;
+        for (int i = 0; i < k; i++) {
+            res.push_back(v[i].first);
+        }
+        return res;
     }
-    cin >> k;
-
-    unordered_map<int, int> freq;
-
-    for (int x : vec) {
-        freq[x]++;
-    }
-
-    vector<pair<int, int>> v(freq.begin(), freq.end());
-    sort(v.begin(), v.end(),
-         [](auto& a, auto& b) { return a.second < b.second; });
-
-    vector<int> res;
-    for (int i = 0; i < k; i++) {
-        res.push_back(v[i].second);
-    }
-    return res;
-}
+};

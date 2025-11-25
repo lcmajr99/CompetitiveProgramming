@@ -1,21 +1,28 @@
-#include <bits/stdc++.h>
-
+#include <unordered_set>
+#include <vector>
 using namespace std;
 
-int main() {
-    vector<int> array;
-    int num;
+class Solution {
+   public:
+    int longestConsecutive(vector<int>& nums) {
+        if (nums.empty()) return 0;
 
-    while (cin >> num) {
-        array.push_back(num);
+        unordered_set<int> s(nums.begin(), nums.end());
+        int longest = 0;
+
+        for (int n : s) {
+            if (!s.count(n - 1)) {
+                int current = n;
+                int streak = 1;
+                while (s.count(current + 1)) {
+                    current++;
+                    streak++;
+                }
+
+                longest = max(longest, streak);
+            }
+        }
+
+        return longest;
     }
-    if (array.empty()) return 0;
-    sort(array.begin(), array.end());
-    int cont = 0;
-    int big = -1;
-    for (int i = 0; i < array.size() - 1; i++) {
-        if (array[i] == array[i + 1]) cont++;
-        if (cont > big) big = cont;
-    }
-    cout << big << endl;
-}
+};
